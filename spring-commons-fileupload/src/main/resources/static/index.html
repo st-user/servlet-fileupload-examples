@@ -6,6 +6,13 @@
 <body>
     <h1>Hello File Upload</h1>
 
+    <section>API for upload:
+        <select name="postPath" id="postPath">
+            <option value="normal">normal</option>
+            <option value="streaming">streaming</option>
+        </select>
+    </section>
+
     <section>
         <form method="POST" enctype="multipart/form-data" action="/normal">
             <p>File to upload 1: <input type="file" name="uploadFile"/></p>
@@ -15,13 +22,6 @@
             <p><input type="submit" value="upload"/></p>
         </form>
     </section>
-    <section>
-        <select name="postPath" id="postPath">
-            <option value="normal">normal</option>
-            <option value="streaming">streaming</option>
-        </select>
-    </section>
-
 
     <script>
             const $postPath = document.querySelector('#postPath');

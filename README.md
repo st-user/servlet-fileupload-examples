@@ -32,9 +32,23 @@ So Spring no longer supports the components for Commons FileUpload(e.g. CommonsM
 
 This project can become a rescue for someone who wants to keep using Commons FileUpload with Spring framework.
 
-In this project, we uses [Eclipse Transformer project](https://github.com/eclipse/transformer) in order to convert from `javax.*` namespace to `jakarta.*` namespace in Commons FileUpload jar and in the Spring Boot application, we directly calls Commons FileUpload API(Streaming API) in the controller's methods.
+In this project, we use [Eclipse Transformer project](https://github.com/eclipse/transformer) in order to convert from `javax.*` namespace to `jakarta.*` namespace in Commons FileUpload jar and in the Spring Boot application, we directly call Commons FileUpload API(Streaming API) in the controller's methods.
 
 ## MISC
+
+### Logging
+
+The applications in this project output logs about changes on the temporary directory(`javax.servlet.context.tempdir`) by
+utilizing `WatchService` API.
+
+If we don't use [Commons FileUpload Stream API](https://commons.apache.org/proper/commons-fileupload/streaming.html),
+uploaded files are written to the directory if the files are considered 'large' files. By default, files larger than
+1KB are considered 'Large' files in this project.
+
+**reference**:
+
+- [A Guide to WatchService in Java NIO2 - Baeldung](https://www.baeldung.com/java-nio2-watchservice)
+
 
 ### Create large files for testing
 
