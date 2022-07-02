@@ -2,7 +2,7 @@
 
 Simple servlet web application using Commons FileUpload and servlet standard file upload components. One of its
 endpoints
-utilizes [Commons FileUpload Streaming API](https://commons.apache.org/proper/commons-fileupload/streaming.html)
+utilizes [Commons FileUpload Streaming API](https://commons.apache.org/proper/commons-fileupload/streaming.html).
 
 ## Build & Run
 

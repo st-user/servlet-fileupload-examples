@@ -6,7 +6,7 @@ Example projects showing the way of uploading files by using [Commons FileUpload
 
 ### [simple-servlet-file-upload](./simple-servlet-file-upload/)
  
-Simple servlet web application using Commons FileUpload and servlet standard file upload components. One of its endpoints utilizes [Commons FileUpload Streaming API](https://commons.apache.org/proper/commons-fileupload/streaming.html)
+Simple servlet web application using Commons FileUpload and servlet standard file upload components. One of its endpoints utilizes [Commons FileUpload Streaming API](https://commons.apache.org/proper/commons-fileupload/streaming.html).
 
 This project uses jakarta EE 8.
 
@@ -60,7 +60,7 @@ dd if=/dev/zero of=1g.img bs=1 count=0 seek=1G
 
 **reference:**
 
-[Linux / UNIX: Create Large 1GB Binary Image File With dd Command](https://www.cyberciti.biz/faq/howto-create-lage-files-with-dd-command/)
+ - [Linux / UNIX: Create Large 1GB Binary Image File With dd Command](https://www.cyberciti.biz/faq/howto-create-lage-files-with-dd-command/)
 
 
 

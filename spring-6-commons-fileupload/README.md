@@ -4,7 +4,7 @@ Spring Boot application using Commons FileUpload Streaming API. This project use
 depends on Spring framework **version 6**).
 
 For the information of the problem about Commons FileUpload used with Spring framework 6, Please
-see [this README](../README.md#spring-6-commons-fileupload)
+see [this README](../README.md#spring-6-commons-fileupload).
 
 ## Build & Run
 
@@ -27,7 +27,7 @@ unzip org.eclipse.transformer.cli-0.4.0-distribution.jar
 
 #### Run conversion
 
-**Prerequisite:** You have to download the Commons FileUpload jar to your maven local repository file **before** you run the following commands
+Prerequisite: You have to download the Commons FileUpload jar to your maven local repository **before** you run the following commands
 
 ``` bash
 
