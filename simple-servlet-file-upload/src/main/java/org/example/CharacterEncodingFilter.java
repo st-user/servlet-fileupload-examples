@@ -31,4 +31,8 @@ public class CharacterEncodingFilter implements Filter {
 
         chain.doFilter(req, res);
     }
+
+    @Override
+    public void destroy() {
+    }
 }

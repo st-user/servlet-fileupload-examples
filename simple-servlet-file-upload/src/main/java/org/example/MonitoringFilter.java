@@ -66,4 +66,8 @@ public class MonitoringFilter implements Filter {
         String path = ((HttpServletRequest) request).getServletPath();
         System.out.printf("%s takes %d ms.%n", path, System.currentTimeMillis() - start);
     }
+
+    @Override
+    public void destroy() {
+    }
 }

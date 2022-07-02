@@ -46,6 +46,6 @@ public class FileUploadServlet extends HttpServlet {
             }
         }
 
-        resp.sendRedirect("/");
+        resp.sendRedirect(req.getContextPath() + "/");
     }
 }
