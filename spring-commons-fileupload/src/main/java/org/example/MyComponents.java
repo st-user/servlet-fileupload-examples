@@ -1,7 +1,10 @@
 package org.example;
 
+import static org.example.Constants.FILE_SIZE_THRESHOLD;
+import static org.example.Constants.MAX_FILE_SIZE;
+import static org.example.Constants.MAX_REQUEST_SIZE;
+
 import java.nio.charset.StandardCharsets;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
@@ -10,16 +13,14 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 @Component
 public class MyComponents {
-    @Autowired
-    private Config config;
-
+    
     @Bean
     public CommonsMultipartResolver commonsMultipartResolver() {
         CommonsMultipartResolver resolver = new CommonsMultipartResolver();
-        resolver.setMaxInMemorySize(config.fileSizeThreshold);
-        resolver.setMaxUploadSize(config.maxRequestSize);
-        resolver.setMaxUploadSizePerFile(config.maxFileSize);
-        resolver.setResolveLazily(config.resolveLazily);
+        resolver.setMaxInMemorySize(FILE_SIZE_THRESHOLD);
+        resolver.setMaxUploadSize(MAX_REQUEST_SIZE);
+        resolver.setMaxUploadSizePerFile(MAX_FILE_SIZE);
+        resolver.setResolveLazily(true);
         return resolver;
     }
 
