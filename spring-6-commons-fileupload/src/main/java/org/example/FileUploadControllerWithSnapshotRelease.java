@@ -8,27 +8,27 @@ import jakarta.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import org.apache.commons.fileupload.FileItemIterator;
-import org.apache.commons.fileupload.FileItemStream;
-import org.apache.commons.fileupload.FileUploadException;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.fileupload2.FileItemIterator;
+import org.apache.commons.fileupload2.FileItemStream;
+import org.apache.commons.fileupload2.FileUploadException;
+import org.apache.commons.fileupload2.jaksrvlt.JakSrvltFileUpload;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
-public class FileUploadController {
+public class FileUploadControllerWithSnapshotRelease {
 
-    @PostMapping("/streaming-using-transformed-jar")
-    public View streamingUsingTransformedJar(HttpServletRequest req)
+    @PostMapping("/streaming-using-2x-snapshot")
+    public View streamingUsing2xSnapshot(HttpServletRequest req)
         throws IOException, FileUploadException {
 
-        if (!ServletFileUpload.isMultipartContent(req)) {
+        if (!JakSrvltFileUpload.isMultipartContent(req)) {
             throw new UnsupportedOperationException("Requests must contain multipart content.");
         }
 
-        ServletFileUpload upload = new ServletFileUpload();
+        JakSrvltFileUpload upload = new JakSrvltFileUpload();
         upload.setSizeMax(MAX_REQUEST_SIZE);
         upload.setFileSizeMax(MAX_FILE_SIZE);
 
@@ -57,5 +57,4 @@ public class FileUploadController {
 
         return new RedirectView("/index.html");
     }
-
 }

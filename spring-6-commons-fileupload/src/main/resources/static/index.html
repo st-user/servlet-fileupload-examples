@@ -6,8 +6,15 @@
 <body>
     <h1>Hello File Upload</h1>
 
+    <section>API for upload:
+        <select name="postPath" id="postPath">
+            <option value="streaming-using-transformed-jar">streaming-using-transformed-jar</option>
+            <option value="streaming-using-2x-snapshot">streaming-using-2x-snapshot</option>
+        </select>
+    </section>
+
     <section>
-        <form method="POST" enctype="multipart/form-data" action="/streaming">
+        <form method="POST" enctype="multipart/form-data" action="/streaming-using-transformed-jar">
             <p>File to upload 1: <input type="file" name="uploadFile"/></p>
             <p>File to upload 2: <input type="file" name="uploadFile"/></p>
             <p>File to upload 3: <input type="file" name="uploadFile"/></p>
@@ -16,5 +23,15 @@
         </form>
     </section>
 
+    <script>
+            const $postPath = document.querySelector('#postPath');
+            const changeActionPath = () => {
+                const path = $postPath.options[$postPath.selectedIndex];
+                document.forms[0].action = `/${path.value}`;
+            };
+            $postPath.addEventListener('change', changeActionPath);
+            window.addEventListener('load', changeActionPath);
+
+    </script>
 </body>
 </html>
