@@ -32,7 +32,7 @@ So Spring no longer supports the components for Commons FileUpload(e.g. CommonsM
 
 This project can become a rescue for someone who wants to keep using Commons FileUpload with Spring framework.
 
-In this project, we use [Eclipse Transformer project](https://github.com/eclipse/transformer) in order to convert from `javax.*` namespace to `jakarta.*` namespace in Commons FileUpload jar and in the Spring Boot application, we directly call Commons FileUpload API(Streaming API) in the controller's methods.
+In this project, we use [Eclipse Transformer project](https://github.com/eclipse/transformer) in order to convert from `javax.*` namespace to `jakarta.*` namespace in Commons FileUpload jar and we directly call Commons FileUpload API(Streaming API) in the controller's methods in the Spring Boot application.
 
 ## MISC
 
@@ -52,11 +52,22 @@ uploaded files are written to the directory if the files are considered 'large' 
 
 ### Create large files for testing
 
-```
+``` bash
 
 dd if=/dev/zero of=1g.img bs=1 count=0 seek=1G
 
 ```
+
+### Output GC logs for Spring Boot applications
+
+``` bash
+
+./mvnw clean package
+java -Xlog:gc:${HOME}/work/gc.log -jar target/${APPLICATION_JAR_NAME}.jar
+
+
+```
+
 
 **reference:**
 
