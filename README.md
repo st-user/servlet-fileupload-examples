@@ -27,7 +27,7 @@ This project uses Spring Boot version 2(Spring framework version 5).
 Spring Boot application using Commons FileUpload with Spring Security. 
 
 In this application, we send a multipart HTTP request including a **CSRF token**.
-The CSRF token is included in URL. We have to prevent the Spring's multipart resolver from parsing the HTTP request body so that we have to make it possible for Commons FileUpload Stream API to parse it.
+The CSRF token is included in URL. We have to prevent the Spring's multipart resolver from parsing the HTTP request body so that we have to make it possible for Commons FileUpload Streaming API to parse it.
 
 
 
