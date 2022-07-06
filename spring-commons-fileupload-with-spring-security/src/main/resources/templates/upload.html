@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Hello File Upload</h1>
+
+<section>API for upload:
+    <select name="postPath" id="postPath">
+        <option value="normal">normal</option>
+        <option value="streaming">streaming</option>
+    </select>
+</section>
+
+<section>
+    <!--<form method="POST" enctype="multipart/form-data" th:action="@{/normal} + '?' + ${_csrf.parameterName} + '=' + ${_csrf.token}">-->
+    <form method="POST" enctype="multipart/form-data" th:action="@{/}">
+        <p>File to upload 1: <input type="file" name="uploadFile"/></p>
+        <p>File to upload 2: <input type="file" name="uploadFile"/></p>
+        <p>File to upload 3: <input type="file" name="uploadFile"/></p>
+        <p>Some data: <input type="text" name="textData" value="Hello!😀" maxlength="100"/></p>
+        <p><input type="submit" value="upload"/></p>
+    </form>
+</section>
+<section>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+</section>
+
+<script th:inline="javascript">
+/*<![CDATA[*/
+
+const csrfTokenName = /*[[${_csrf.parameterName}]]*/ 'dummyName';
+const csrfToken = /*[[${_csrf.token}]]*/ 'dummyToken';
+
+/*]]>*/
+
+const $postPath = document.querySelector('#postPath');
+const context = document.forms[0].action;
+const changeActionPath = () => {
+    const path = $postPath.options[$postPath.selectedIndex];
+    document.forms[0].action = `${context}${path.value}?${csrfTokenName}=${csrfToken}`;
+};
+$postPath.addEventListener('change', changeActionPath);
+window.addEventListener('load', changeActionPath);
+
+</script>
+
+</body>
+</html>
