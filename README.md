@@ -22,6 +22,15 @@ Spring Boot application using servlet standard file upload components.
 
 This project uses Spring Boot version 2(Spring framework version 5).
 
+### [spring-commons-fileupload-with-spring-security](./spring-commons-fileupload-with-spring-security/)
+
+Spring Boot application using Commons FileUpload with Spring Security. 
+
+In this application, we send a multipart HTTP request including a **CSRF token**.
+The CSRF token is included in URL. We have to prevent the Spring's multipart resolver from parsing the HTTP request body so that we have to make it possible for Commons FileUpload Stream API to parse it.
+
+
+
 ### [spring-6-commons-fileupload](./spring-6-commons-fileupload/)
  
 Spring Boot application using Commons FileUpload Streaming API. This project uses Spring Boot **version 3** (which depends on Spring framework **version 6**). From version 6, Spring requires jakarta EE 9+. This means that it requires `jakarta.*` namespace.
