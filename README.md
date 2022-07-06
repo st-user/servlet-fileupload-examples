@@ -67,6 +67,10 @@ dd if=/dev/zero of=1g.img bs=1 count=0 seek=1G
 
 ```
 
+**reference:**
+
+ - [Linux / UNIX: Create Large 1GB Binary Image File With dd Command](https://www.cyberciti.biz/faq/howto-create-lage-files-with-dd-command/)
+
 ### Output GC logs for Spring Boot applications
 
 ``` bash
@@ -77,10 +81,6 @@ java -Xlog:gc:${HOME}/work/gc.log -jar target/${APPLICATION_JAR_NAME}.jar
 
 ```
 
-
-**reference:**
-
- - [Linux / UNIX: Create Large 1GB Binary Image File With dd Command](https://www.cyberciti.biz/faq/howto-create-lage-files-with-dd-command/)
 
 
 
